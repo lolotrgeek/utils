@@ -1,0 +1,1 @@
+const roundDecimal = (number, places) => parseFloat((parseFloat(number)).toFixed(places))
