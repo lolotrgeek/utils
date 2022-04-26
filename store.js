@@ -47,6 +47,23 @@ const cleared = async () => {
         return true
     }    
 }
+
+const get_all = async () => {
+    try {
+        let data = await fs.readFile(filename)
+        let valid = JSON.parse(data.toString('utf-8'))
+        if (typeof valid === 'object' && Array.isArray(valid.cache) && valid.cache.length > 0) {
+            let keys = valid.cache.map(cached => cached[0].substring(5, cached[0].length))
+            let values = await Promise.all(keys.map(key => store.get(key)))
+            let keyvalue_map = keys.map((key, index) => [key,values[index]])
+            return Object.fromEntries(keyvalue_map)
+        }
+    } catch (error) {
+        return error
+    }    
+}
+
+store.get_all = get_all
 store.cleared = cleared
 store.check = check
 store.remove = remove
