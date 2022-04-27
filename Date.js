@@ -3,7 +3,7 @@
  * @param {number} days 
  * @returns 
  */
- Date.prototype.addDays = function (days) {
+Date.prototype.addDays = function (days) {
     var date = new Date(this.valueOf())
     date.setDate(date.getDate() + days)
     return date
@@ -19,12 +19,18 @@ Date.prototype.addYears = function (years) {
  * @param {number} hours 
  * @returns 
  */
- Date.prototype.addHours = function (hours) { this.setTime(this.getTime() + (hours * 60 * 60 * 1000)); return this }
+Date.prototype.addHours = function (hours) { this.setTime(this.getTime() + (hours * 60 * 60 * 1000)); return this }
 
- /**
-  *  Add Minutes to date
-  * @param {number} minutes 
-  * @returns 
-  */
-  Date.prototype.addMinutes = function (minutes) { this.setTime(this.getTime() + minutes*60000); return this }
- 
+/**
+ *  Add Minutes to date
+ * @param {number} minutes 
+ * @returns 
+ */
+Date.prototype.addMinutes = function (minutes) { this.setTime(this.getTime() + minutes * 60000); return this }
+
+/**
+ * Get difference between this date and another in milliseconds
+ * @param {Date} date 
+ * @returns 
+ */
+Date.prototype.difference = function (date) { return this - date }
