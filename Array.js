@@ -77,3 +77,12 @@ Array.prototype.remove = function () {
  * Get the average of an array of integers.
  */
 Array.prototype.average = function () { return this.reduce((a, b) => a + b) / this.length }
+
+/**
+ * Randomly Choose an item in `array`
+ * @param {*} array 
+ * @returns 
+ */
+Array.choice = function (array) {
+  return array[Math.floor(Math.random() * array.length)]
+}
