@@ -1,6 +1,6 @@
 
 
-function Decode(parameters, data) {
+function Decode( data) {
     try {
         if (typeof data === 'string') return Parse(data) 
         else return data
@@ -10,7 +10,7 @@ function Decode(parameters, data) {
     }
 }
 
-function Encode(parameters, data){
+function Encode( data){
     try{ return JSON.stringify(data) } 
     catch (error) { return }
 }
