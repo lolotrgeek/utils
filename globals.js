@@ -1,3 +1,5 @@
+const v8 = require('v8')
+
 global.random = function (min, max) {
     let rand = Math.random();
     if (typeof min === 'undefined') {
