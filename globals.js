@@ -48,16 +48,16 @@ global.isObject = function isObject(string) {
 
 global.getObject = function getObject(string) {
     try {
-      return JSON.parse(string)
+        return JSON.parse(string)
     } catch (error) {
-      return false
+        return false
     }
-  }
-  
-  global.len = function len(object) {
+}
+
+global.len = function len(object) {
     return Object.keys(object).length
-  }
-  
-  global.clone = function clone(object) {
+}
+
+global.clone = function clone(object) {
     return v8.deserialize(v8.serialize(object))
-  }
+}
